@@ -15,8 +15,7 @@ def merge_sort(array)
   merge(left, right)
 end
 
-def merge(left, right)
-  result = []
+def merge(left, right, result = [])
   until left.empty? || right.empty?
     if left[0] <= right[0]
       result << left[0]
@@ -39,5 +38,9 @@ def merge(left, right)
   result
 end
 
-sorted_list = merge_sort([1, 2, 4, 10, 8, 9, 3])
-p sorted_list
+random_array = []
+rand(200).times do
+  random_array << rand(200)
+end
+
+p merge_sort(random_array)
